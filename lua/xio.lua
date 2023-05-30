@@ -1,5 +1,3 @@
-vim.cmd.colorscheme("tokyonight")
-
 -- sets
 
 vim.opt.number = true
@@ -45,7 +43,7 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- telescope
 local telbin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', telbin.git_files)
-vim.keymap.set('n', '<leader>ps', telbin.live_grep)
+vim.keymap.set('n', '<leader>fg', telbin.live_grep)
 vim.keymap.set('n', '<leader>ff', telbin.find_files)
 vim.keymap.set('n', '<leader>fb', telbin.buffers)
 vim.keymap.set('n', '<leader>fh', telbin.help_tags)
