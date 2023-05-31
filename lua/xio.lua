@@ -30,6 +30,8 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+vim.opt.clipboard = "unnamedplus"
+
 -- vim highlight
 vim.api.nvim_create_autocmd('TextYankPost', {
     group = vim.api.nvim_create_augroup('HighlightYank', {}),
