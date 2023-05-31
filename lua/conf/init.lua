@@ -1,3 +1,4 @@
 require("conf.lsp")
-require("conf.treesitter")
 require("conf.theme")
+require("conf.treesitter")
+require("conf.bufferline")
