@@ -41,6 +41,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- telescope
+local tel = require('telescope')
+tel.setup()
+tel.load_extension('fzf')
 local telbin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', telbin.git_files)
 vim.keymap.set('n', '<leader>fg', telbin.live_grep)
