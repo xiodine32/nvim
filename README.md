@@ -38,3 +38,4 @@ these are the plugin files (with what they each do):
 - [undotree.lua](https://github.com/mbbill/undotree) - undo tree history
 - [vimfugitive.lua](https://github.com/tpope/vim-fugitive) - git wrapper
 - [whichkey.lua](https://github.com/folke/which-key.nvim) - show possible keys (with info where available)
+- [nullls.lua](https://github.com/jose-elias-alvarez/null-ls.nvim) - null language server (formatters)
