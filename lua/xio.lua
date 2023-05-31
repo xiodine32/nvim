@@ -44,14 +44,16 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- telescope
 local tel = require('telescope')
-tel.setup()
+tel.setup({ extensions = { ["ui-select"] = { require("telescope.themes").get_cursor {} } } })
 tel.load_extension('fzf')
+tel.load_extension('ui-select')
 local telbin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', telbin.git_files)
 vim.keymap.set('n', '<leader>fg', telbin.live_grep)
 vim.keymap.set('n', '<leader>ff', telbin.find_files)
 vim.keymap.set('n', '<leader>fb', telbin.buffers)
 vim.keymap.set('n', '<leader>fh', telbin.help_tags)
+vim.keymap.set('n', '<Leader>pp', telbin.quickfix)
 -- undotree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 -- git
@@ -65,6 +67,24 @@ vim.keymap.set('n', '<S-h>', '<CMD>BufferLineCyclePrev<CR>')
 vim.keymap.set('n', ']b', '<CMD>BufferLineMoveNext<CR>')
 vim.keymap.set('n', '[b', '<CMD>BufferLineMovePrev<CR>')
 vim.keymap.set('n', 'gs', '<CMD>BufferLineSortByDirectory<CR>')
+-- lsp
+-- local opts = { buffer = bufnr, noremap = true, silent = true }
+-- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+-- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+-- vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+-- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+-- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+-- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+-- vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+-- vim.keymap.set('n', '<space>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, opts)
+-- vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+-- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+-- vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+-- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+-- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+-- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+-- vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+vim.keymap.set({ 'n', 'v', 'i' }, '<M-Enter>', vim.lsp.buf.code_action, {})
 
 -- keymap
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
