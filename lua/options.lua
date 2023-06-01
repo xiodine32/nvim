@@ -1,8 +1,6 @@
 vim.g.mapleader = " "
 
-vim.opt.clipboard = "unnamedplus" -- Sync with system clipboard
-
-vim.opt.guicursor = ""
+vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -44,15 +42,15 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- autoyank
-vim.api.nvim_create_autocmd('TextYankPost', {
-    group = vim.api.nvim_create_augroup('HighlightYank', {}),
-    pattern = '*',
-    callback = function()
-        vim.highlight.on_yank({
-            higroup = 'IncSearch',
-            timeout = 40,
-        })
-    end,
+vim.api.nvim_create_autocmd("TextYankPost", {
+        group = vim.api.nvim_create_augroup("HighlightYank", {}),
+        pattern = "*",
+        callback = function()
+                vim.highlight.on_yank({
+                        higroup = "IncSearch",
+                        timeout = 40,
+                })
+        end,
 })
 
 -- netrw
