@@ -1,5 +1,5 @@
 return {
-        'echasnovski/mini.comment',
-        version = '*',
-        opts = {}
+        "echasnovski/mini.comment",
+        version = "*",
+        opts = {},
 }

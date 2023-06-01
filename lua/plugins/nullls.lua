@@ -1,7 +1,7 @@
 return {
         "jose-elias-alvarez/null-ls.nvim",
         depends = { "nvim-lua/plenary.nvim" },
-        config = function ()
+        config = function()
                 local null_ls = require("null-ls")
                 null_ls.setup({
                         sources = {
@@ -10,5 +10,5 @@ return {
                                 null_ls.builtins.completion.spell,
                         },
                 })
-        end
+        end,
 }
