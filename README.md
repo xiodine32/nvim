@@ -3,7 +3,7 @@
 ## Setup
 
 ```bash
-brew install ripgrep fd fzf neovim tmux stylua
+brew install ripgrep fd fzf neovim tmux stylua yamlfmt shellcheck
 mkdir -p ~/.config/nvim
 git clone https://github.com/xiodine32/nvim ~/.config/nvim
 ```
