@@ -3,9 +3,9 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 8
+vim.opt.softtabstop = 8
+vim.opt.shiftwidth = 8
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
@@ -33,40 +33,42 @@ vim.opt.colorcolumn = "80"
 vim.opt.clipboard = "unnamedplus"
 
 -- vim highlight
-vim.api.nvim_create_autocmd('TextYankPost', {
-    group = vim.api.nvim_create_augroup('HighlightYank', {}),
-    pattern = '*',
-    callback = function() vim.highlight.on_yank() end,
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = vim.api.nvim_create_augroup("HighlightYank", {}),
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 
 -- keybindings
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- telescope
-local tel = require('telescope')
-tel.setup({ extensions = { ["ui-select"] = { require("telescope.themes").get_cursor {} } } })
-tel.load_extension('fzf')
-tel.load_extension('ui-select')
-local telbin = require('telescope.builtin')
-vim.keymap.set('n', '<C-p>', telbin.git_files)
-vim.keymap.set('n', '<leader>fg', telbin.live_grep)
-vim.keymap.set('n', '<leader>ff', telbin.find_files)
-vim.keymap.set('n', '<leader>fb', telbin.buffers)
-vim.keymap.set('n', '<leader>fh', telbin.help_tags)
-vim.keymap.set('n', '<Leader>pp', telbin.quickfix)
+local tel = require("telescope")
+tel.setup({ extensions = { ["ui-select"] = { require("telescope.themes").get_cursor({}) } } })
+tel.load_extension("fzf")
+tel.load_extension("ui-select")
+local telbin = require("telescope.builtin")
+vim.keymap.set("n", "<C-p>", telbin.git_files)
+vim.keymap.set("n", "<leader>fg", telbin.live_grep)
+vim.keymap.set("n", "<leader>ff", telbin.find_files)
+vim.keymap.set("n", "<leader>fb", telbin.buffers)
+vim.keymap.set("n", "<leader>fh", telbin.help_tags)
+vim.keymap.set("n", "<Leader>pp", telbin.quickfix)
 -- undotree
-vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 -- git
-vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 -- bufferline
-vim.keymap.set('n', 'gb', '<CMD>BufferLinePick<CR>')
-vim.keymap.set('n', '<leader>ts', '<CMD>BufferLinePickClose<CR>')
-vim.keymap.set('n', '<S-q>', ':bd<CR>')
-vim.keymap.set('n', '<S-l>', '<CMD>BufferLineCycleNext<CR>')
-vim.keymap.set('n', '<S-h>', '<CMD>BufferLineCyclePrev<CR>')
-vim.keymap.set('n', ']b', '<CMD>BufferLineMoveNext<CR>')
-vim.keymap.set('n', '[b', '<CMD>BufferLineMovePrev<CR>')
-vim.keymap.set('n', 'gs', '<CMD>BufferLineSortByDirectory<CR>')
+vim.keymap.set("n", "gb", "<CMD>BufferLinePick<CR>")
+vim.keymap.set("n", "<leader>ts", "<CMD>BufferLinePickClose<CR>")
+vim.keymap.set("n", "<S-q>", ":bd<CR>")
+vim.keymap.set("n", "<S-l>", "<CMD>BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<S-h>", "<CMD>BufferLineCyclePrev<CR>")
+vim.keymap.set("n", "]b", "<CMD>BufferLineMoveNext<CR>")
+vim.keymap.set("n", "[b", "<CMD>BufferLineMovePrev<CR>")
+vim.keymap.set("n", "gs", "<CMD>BufferLineSortByDirectory<CR>")
 -- lsp
 -- local opts = { buffer = bufnr, noremap = true, silent = true }
 -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
@@ -84,7 +86,7 @@ vim.keymap.set('n', 'gs', '<CMD>BufferLineSortByDirectory<CR>')
 -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 -- vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
-vim.keymap.set({ 'n', 'v', 'i' }, '<M-Enter>', vim.lsp.buf.code_action, {})
+vim.keymap.set({ "n", "v", "i" }, "<M-Enter>", vim.lsp.buf.code_action, {})
 
 -- keymap
 vim.keymap.set("n", "<C-d>", "<C-d>zz")

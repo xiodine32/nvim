@@ -12,5 +12,6 @@ return {
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'L3MON4D3/LuaSnip' },
         { "elgiano/nvim-treesitter-angular",  branch = "topic/jsx-fix" },
+        { "lukas-reineke/lsp-format.nvim" }
     }
 }
