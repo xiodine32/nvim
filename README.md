@@ -1,5 +1,11 @@
 # vim config
 
+## prerequisites
+
+```bash
+brew install fd fzf neovim ripgrep shellcheck stylua yamlfmt
+```
+
 ## setup
 
 - blankline.lua - whitespace indentations
@@ -13,4 +19,5 @@
 - theme.lua - theme
 - treesitter.lua - text highlighting
 - trunk.lua - look pretty window
-- whichkey.lua - learning vim
+- whichkey.lua - vim learner
+
