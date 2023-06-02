@@ -4,7 +4,8 @@ return {
                 require("nvim-treesitter.install").update({ with_sync = true })
         end,
         dependencies = {
-                { "elgiano/nvim-treesitter-angular", branch = "topic/jsx-fix" },
+                { "elgiano/nvim-treesitter-angular",         branch = "topic/jsx-fix" },
+                { "nvim-treesitter/nvim-treesitter-context", opts = {} },
         },
         opts = {
                 ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "regex", "bash", "markdown_inline" },

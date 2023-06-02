@@ -7,7 +7,6 @@ return {
                         panel = { enabled = false },
                         suggestion = {
                                 auto_trigger = true,
-                                keymap = { accept = "<M-\\>" },
                         },
                 })
         end,
