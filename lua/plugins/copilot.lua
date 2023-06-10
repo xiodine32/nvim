@@ -5,7 +5,7 @@ return {
     config = function()
         require("copilot").setup({
             panel = { enabled = false },
-            suggestion = { auto_trigger = false },
+            suggestion = {},
         })
     end,
 }
