@@ -8,8 +8,10 @@ return {
     opts = {
         view = {
             number = true,
-            relativenumber = true
-
+            relativenumber = true,
+            float = {
+                enable = true
+            }
         }
     }
 }
