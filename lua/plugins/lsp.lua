@@ -58,8 +58,18 @@ return {
 
                 local cmp_mappings = lsp.defaults.cmp_mappings({
                     ["<C-Space>"] = cmp.mapping.complete(),
+                    ['<CR>'] = cmp.mapping.confirm({
+                        -- documentation says this is important.
+                        -- I don't know why.
+                        behavior = cmp.ConfirmBehavior.Replace,
+                        select = false,
+                    })
                 })
                 cmp.setup({
+                    sources = {
+                        { name = 'copilot' },
+                        { name = 'nvim_lsp' },
+                    },
                     mapping = cmp_mappings,
                 })
             end,
