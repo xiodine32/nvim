@@ -1,6 +1,8 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+
 vim.g.mapleader = " "
 
 vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
@@ -12,6 +14,10 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+vim.opt.cmdheight = 0
+vim.opt.laststatus = 3
+vim.opt.numberwidth = 4
 
 vim.opt.smartindent = true
 
