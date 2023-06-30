@@ -4,25 +4,25 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
-    cmd = { 'NvimTreeToggle', 'NvimTreeFocus' },
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     opts = {
         view = {
             number = true,
             relativenumber = true,
-            float = {
-                enable = true,
-                open_win_config = {
-                    relative = "cursor",
-                    border = "rounded",
-                    col = 1,
-                    row = 1,
-                    style = "minimal"
-                }
-            }
+            -- float = {
+            --     enable = false,
+            -- open_win_config = {
+            --     relative = "cursor",
+            --     border = "rounded",
+            --     col = 1,
+            --     row = 1,
+            --     style = "minimal",
+            -- },
+            -- },
         },
         filters = {
-            dotfiles = true
+            dotfiles = true,
         },
-        update_focused_file = { enable = true, update_root = true }
-    }
+        update_focused_file = { enable = true, update_root = true },
+    },
 }
