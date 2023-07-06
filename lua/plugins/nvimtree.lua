@@ -4,7 +4,6 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     opts = {
         view = {
             number = true,
