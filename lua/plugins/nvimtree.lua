@@ -9,20 +9,18 @@ return {
         view = {
             number = true,
             relativenumber = true,
-            -- float = {
-            --     enable = false,
-            -- open_win_config = {
-            --     relative = "cursor",
-            --     border = "rounded",
-            --     col = 1,
-            --     row = 1,
-            --     style = "minimal",
-            -- },
-            -- },
         },
         filters = {
             dotfiles = true,
         },
-        update_focused_file = { enable = true, update_root = true },
+        update_focused_file = {
+            enable = true,
+            update_root = true,
+        },
+        actions = {
+            open_file = {
+                quit_on_open = true,
+            },
+        },
     },
 }
