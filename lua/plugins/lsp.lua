@@ -4,6 +4,7 @@ return {
         "neovim/nvim-lspconfig",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
+        { 'folke/neodev.nvim', opts = {} },
         "hrsh7th/nvim-cmp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
@@ -12,22 +13,6 @@ return {
         "hrsh7th/cmp-nvim-lua",
         "L3MON4D3/LuaSnip",
         "rafamadriz/friendly-snippets",
-        {
-            "jay-babu/mason-null-ls.nvim",
-            dependencies = {
-                "williamboman/mason.nvim",
-                "jose-elias-alvarez/null-ls.nvim",
-            },
-            config = function()
-                require("mason").setup()
-                require("mason-null-ls").setup({
-                    ensure_installed = { "prettier" },
-                    automatic_setup = true,
-                    handlers = {},
-                })
-                require("null-ls").setup({})
-            end,
-        },
     },
     config = function()
         local lsp = require("lsp-zero")
@@ -54,7 +39,7 @@ return {
         cmp.setup({
             sources = {
                 -- Copilot Source
-                { name = "copilot",  group_index = 2 },
+                -- { name = "copilot",  group_index = 2 },
                 -- Other Sources
                 { name = "nvim_lsp", group_index = 2 },
                 { name = "path",     group_index = 2 },
