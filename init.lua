@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("options")
 require("lazy").setup({
     spec = { { import = "plugins" } },
-    install = { colorscheme = { "tokyonight" } },
+    install = { colorscheme = { "onedark" } },
 })
 require("keybinds")
 

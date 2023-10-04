@@ -13,6 +13,15 @@ return {
         "hrsh7th/cmp-nvim-lua",
         "L3MON4D3/LuaSnip",
         "rafamadriz/friendly-snippets",
+        {
+            "ray-x/lsp_signature.nvim",
+            event = "VeryLazy",
+            opts = {
+                floating_window = false,
+                hint_prefix = "",
+            },
+            config = function(_, opts) require 'lsp_signature'.setup(opts) end
+        }
     },
     config = function()
         local lsp = require("lsp-zero")
@@ -33,21 +42,28 @@ return {
         lsp.nvim_workspace()
         lsp.setup()
         vim.diagnostic.config({ virtual_text = true })
+        require("mason-lspconfig").setup {}
+        require("mason-lspconfig").setup_handlers {
+            function(server_name) require("lspconfig")[server_name].setup {} end,
+            ["rust_analyzer"] = function()
+                require("rust-tools").setup {}
+            end
+        }
 
-        local cmp = require("cmp")
-
-        cmp.setup({
-            sources = {
-                -- Copilot Source
-                -- { name = "copilot",  group_index = 2 },
-                -- Other Sources
-                { name = "nvim_lsp", group_index = 2 },
-                { name = "path",     group_index = 2 },
-                { name = "luasnip",  group_index = 2 },
-            },
-            mapping = {
-                ["<C-Space>"] = cmp.mapping.complete(),
-            },
-        })
+        -- local cmp = require("cmp")
+        --
+        -- cmp.setup({
+        --     sources = {
+        --         -- Copilot Source
+        --         { name = "copilot",  group_index = 2 },
+        --         -- Other Sources
+        --         { name = "nvim_lsp", group_index = 2 },
+        --         { name = "path",     group_index = 2 },
+        --         { name = "luasnip",  group_index = 2 },
+        --     },
+        --     mapping = {
+        --         ["<C-Space>"] = cmp.mapping.complete(),
+        --     },
+        -- })
     end,
 }
